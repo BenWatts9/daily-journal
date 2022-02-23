@@ -1,0 +1,23 @@
+
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    width: 175px;
+}
+
+select {
+    width: 100px;
+}
+
+input[type="submit"] {
+    margin-left: 2px;
+}
+
+footer {
+    padding:15px 0px 5px 0px;
+    margin: 15px 0px 5px 0px;
+}

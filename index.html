@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Journal</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header>
+        <h1>Daily Journal</h1>
+    </header>
+    <main>
+        <form action="">
+            <fieldset>
+                <label for="journalDate">Date of entry</label>
+                <input type="date" name="journalDate" id="journalDate">
+            </fieldset>
+            
+            <fieldset>
+                <label for="conceptsCovered">Concepts covered</label>
+                <input type="text" name="conceptsCovered" id="conceptsCovered">
+            </fieldset>
+            
+            <fieldset>
+                <label for="journalEntry">Journal Entry</label>
+                <textarea name="journalEntry" style="width:175px;height:40px;"></textarea>
+            </fieldset>
+            
+            <fieldset>
+                <label for="moods">Mood for the day</label>
+                <select id="moods" name="moods">
+                    <option value="sad">sad</option>
+                    <option value="happy">happy</option>
+                    <option value="angry">angry</option>
+                    <option value="releaved">releaved</option>
+                    <option value="ok">Ok</option>
+                </select>
+            </fieldset>
+            
+                <input type="submit" value="Record Journal Entry">   
+        </form>
+    </main>
+    <footer>
+         <a href="https://github.com/BenWatts9">Ben Watts &#169</a>
+    </footer>
+</body>
+</html>
