@@ -1,5 +1,5 @@
-import { EntryListComponent, filteredByMood } from "./JournalEntryList.js"
-import { getJournalEntries, createEntry, deleteEntry } from "./JournalData.js"
+import { EntryListComponent, filteredByMood, showEntryComponent, entryEdit } from "./JournalEntryList.js"
+import { getJournalEntries, createEntry, deleteEntry, getSingleEntry } from "./JournalData.js"
 
 
 
@@ -32,7 +32,7 @@ applicationElement.addEventListener("change", event => {
     }
 })
 
-
+// Event Listener for deleting an entry
 applicationElement.addEventListener("click", event => {
     if (event.target.id.startsWith("delete")) {
         const entryId = event.target.id.split("__")[1];
@@ -41,6 +41,24 @@ applicationElement.addEventListener("click", event => {
     }
 })
 
+// Event Listiener for editing an entry
+applicationElement.addEventListener("click", event => {
+    if (event.target.id.startsWith("edit")) {
+        const entryId = event.target.id.split("__")[1];
+        getSingleEntry(entryId)
+            .then(response => {
+                showEdit(response);
+            })
+    }
+})
+
+const showEdit = (entryObj) => { //need a query selector element
+    const entryElement = document.querySelector("#entryInput")
+    const moodElement = document.querySelector("#moods")
+    moodElement.value = entryObj.mood
+    
+    entryElement.innerHTML = entryEdit(entryObj)
+}
 
 getJournalEntries()
 .then(data => {
@@ -54,4 +72,6 @@ const showEntryList = () => {
     })
 }
 
+const entryHTMLelement = document.querySelector("#entryInput")
+entryHTMLelement.innerHTML = showEntryComponent()
 showEntryList()

@@ -20,6 +20,13 @@
       "concept": "Objects",
       "entry": "Are objects a difficult concept? Where am I?",
       "mood": "Angry"
+    },
+    {
+      "date": "2022-03-29",
+      "concept": "APIs",
+      "entry": "Today we worked with APIs and their functionality.",
+      "mood": "Ok",
+      "id": 4
     }
   ]
 }

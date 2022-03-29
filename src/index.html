@@ -13,36 +13,8 @@
         <header>
             <h1>Daily Journal</h1>
         </header>
-        <form action="">
-            <fieldset>
-                <label for="journalDate">Date of entry</label>
-                <input type="date" name="journalDate" id="journalDate">
-            </fieldset>
-            
-            <fieldset>
-                <label for="conceptsCovered">Concepts covered</label>
-                <input type="text" name="conceptsCovered" id="conceptsCovered">
-            </fieldset>
-            
-            <fieldset>
-                <label for="journalEntry">Journal Entry</label>
-                <textarea name="journalEntry" id="entryBody" style="width:175px;height:40px;"></textarea>
-            </fieldset>
-            
-            <fieldset>
-                <label for="moods">Mood for the day</label>
-                <select id="moods" name="moods">
-                    <option value="Sad">Sad</option>
-                    <option value="Happy">Happy</option>
-                    <option value="Angry">Angry</option>
-                    <option value="Releaved">Releaved</option>
-                    <option value="Ok">Ok</option>
-                </select>
-            </fieldset>
-            
-                <input type="submit" id="submitButton" value="Record Journal Entry">   
-        </form>
-
+        <div id="entryInput"></div>
+        
         <fieldset>
             <label for="moodsFilter">Filter by Mood</label>
             <select id="moodsFilter" name="moodsFilter">

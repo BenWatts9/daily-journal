@@ -26,7 +26,75 @@ export const EntryListComponent = (allEntries) => {
 }
 
 
+export const showEntryComponent = () => {
+    return `
+    <form action="">
+            <fieldset>
+                <label for="journalDate">Date of entry</label>
+                <input type="date" name="journalDate" id="journalDate" value="">
+            </fieldset>
+            
+            <fieldset>
+                <label for="conceptsCovered">Concepts covered</label>
+                <input type="text" name="conceptsCovered" id="conceptsCovered" value="">
+            </fieldset>
+            
+            <fieldset>
+                <label for="journalEntry">Journal Entry</label>
+                <textarea name="journalEntry" id="entryBody" value="" style="width:175px;height:40px;"></textarea>
+            </fieldset>
+            
+            <fieldset>
+                <label for="moods">Mood for the day</label>
+                <select id="moods" name="moods">
+                    <option value="Sad">Sad</option>
+                    <option value="Happy">Happy</option>
+                    <option value="Angry">Angry</option>
+                    <option value="Releaved">Releaved</option>
+                    <option value="Ok">Ok</option>
+                </select>
+            </fieldset>
+            
+                <input type="submit" id="submitButton" value="Record Journal Entry">   
+        </form>
+    `
+} 
 
+
+export const entryEdit = (entryObj) => {
+    return `
+    <form action="">
+            <fieldset>
+                <label for="journalDate">Date of update</label>
+                <input type="date" name="journalDate" id="journalDate" >
+            </fieldset>
+            
+            <fieldset>
+                <label for="conceptsCovered">Concepts covered</label>
+                <input type="text" name="conceptsCovered" id="conceptsCovered" value="${entryObj.concept}">
+            </fieldset>
+            
+            <fieldset>
+                <label for="journalEntry">Journal Entry</label>
+                <textarea name="journalEntry" id="entryBody" style="width:175px;height:40px;">${entryObj.entry}</textarea>
+            </fieldset>
+            
+            <fieldset>
+                <label for="moods">Mood for the day</label>
+                <select id="moods" name="moods" value="${entryObj.mood}">
+                    <option value="Sad">Sad</option>
+                    <option value="Happy">Happy</option>
+                    <option value="Angry">Angry</option>
+                    <option value="Releaved">Releaved</option>
+                    <option value="Ok">Ok</option>
+                </select>
+            </fieldset>
+            <input type="hidden" value="${entryObj.id}">
+
+                <input type="submit" id="submitButton" value="Record Journal Entry">   
+        </form>
+    `
+}
 
 export const filteredByMood = () => {
     const selectedMood = document.querySelector("#moodsFilter")

@@ -35,7 +35,8 @@ export const JournalEntryComponent = (entry) => {
         <section id="entry--${entry.id}" class="journalEntry">
             <h2>${entry.concept}</h2>
             <p>${entry.entry}</p>
-            <button id="delete__${entry.id}">Delete</button
+            <button id="delete__${entry.id}">Delete</button>
+            <button id="edit__${entry.id}">Edit</button>
         </section>
     `
 }
@@ -59,4 +60,20 @@ export const deleteEntry = entryId => {
         }
     })
     .then(response => response.json())
+}
+
+export const getSingleEntry = entryId => {
+    return fetch(`http://localhost:8088/journal/${entryId}`)
+        .then(response => response.json())
+}
+
+export const editPost = entryObj => {
+    return fetch(`http://localhost:8088/journal/${entryObj.id}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(entryObj)
+    })
+        .then(response => response.json())
 }
