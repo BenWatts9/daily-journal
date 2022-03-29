@@ -25,3 +25,17 @@ export const EntryListComponent = (allEntries) => {
     return entryHTML
 }
 
+
+
+
+export const filteredByMood = () => {
+    const selectedMood = document.querySelector("#moodsFilter")
+    const filteredData = useJournal().filter(singlePost => {
+        if (selectedMood.value === singlePost.mood) {
+            return singlePost
+        }
+    })
+    
+    const postElement = document.querySelector("#entryLog")
+    postElement.innerHTML = EntryListComponent(filteredData)
+}

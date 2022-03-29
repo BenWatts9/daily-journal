@@ -1,5 +1,5 @@
-import { EntryListComponent } from "./JournalEntryList.js"
-import { getJournalEntries, createEntry } from "./JournalData.js"
+import { EntryListComponent, filteredByMood } from "./JournalEntryList.js"
+import { getJournalEntries, createEntry, deleteEntry } from "./JournalData.js"
 
 
 
@@ -25,6 +25,21 @@ applicationElement.addEventListener("click", event => {
     }
 })
 
+// Event Listener for sorting entries by moods
+applicationElement.addEventListener("change", event => {
+    if(event.target.id === "moodsFilter"){
+        filteredByMood()
+    }
+})
+
+
+applicationElement.addEventListener("click", event => {
+    if (event.target.id.startsWith("delete")) {
+        const entryId = event.target.id.split("__")[1];
+        deleteEntry(entryId)
+        .then(showEntryList)
+    }
+})
 
 
 getJournalEntries()
