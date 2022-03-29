@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daily Journal</title>
     <link rel="stylesheet" href="styles/main.css">
+    <script type="module" src="scripts/main.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Daily Journal</h1>
-    </header>
-    <main>
+    <main class="dailyjournal">
+        <header>
+            <h1>Daily Journal</h1>
+        </header>
         <form action="">
             <fieldset>
                 <label for="journalDate">Date of entry</label>
@@ -25,7 +26,7 @@
             
             <fieldset>
                 <label for="journalEntry">Journal Entry</label>
-                <textarea name="journalEntry" style="width:175px;height:40px;"></textarea>
+                <textarea name="journalEntry" id="entryBody" style="width:175px;height:40px;"></textarea>
             </fieldset>
             
             <fieldset>
@@ -39,11 +40,12 @@
                 </select>
             </fieldset>
             
-                <input type="submit" value="Record Journal Entry">   
+                <input type="submit" id="submitButton" value="Record Journal Entry">   
         </form>
+        <div id="entryLog"></div>
+        <footer>
+             <a href="https://github.com/BenWatts9">Ben Watts &#169</a>
+        </footer>
     </main>
-    <footer>
-         <a href="https://github.com/BenWatts9">Ben Watts &#169</a>
-    </footer>
 </body>
 </html>
